@@ -292,7 +292,7 @@ class BackupManager:
         total_file_size = 0
         total_compress_size = 0
 
-        temp = tempfile.NamedTemporaryFile(mode='wb', delete=False)
+        temp = tempfile.NamedTemporaryFile(prefix=self.target.split('/')[-1]+'_', dir=str(self.__save), mode='wb', delete=False)
         NAMEDTEMPORARYFILE_NAME = temp.name
         
         if self.__preview:
